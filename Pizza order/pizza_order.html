@@ -12,17 +12,57 @@
     </head>
     <body>
         <div id="menuBG">
-            <h1 style="margin:0 0px 20px;">Order Your Pizza</h1>
+            <h1 style="margin:0 0px 0 20px;"> Order Your Pizza</h1>
             <input id="btnOrder" type="button" onclick="getReceipt()" value="Place Order">
+ <!--Size-->
+            <form id="frmMenu">
+                <div class="menu left">
+                    <h3> Size:</h3>
+                    <input type="radio" name="Size" value="Personal Pizza" > Personal Pizza<br>
+                    <input type="radio" name="Size" value="Medium Pizza" > Medium Pizza<br>
+                    <input type="radio" name="Size" value="Large Pizza" checked> Large<br>
+                    <input type="radio" name="Size" value="Extra-Large Pizza" > Extra-Large Pizza<br>
+                </div>
+<!-- meats-->
+                <div class= "menu right">
+                    <h3> Meats:</h3>
+                    <input type="checkbox" class="meats" name="meats" Value="Pepperoni" > Pepperoni<br>
+                    <input type="checkbox" class="meats" name="meats" Value="Sausage" > Sausage<br>
+                    <input type="checkbox" class="meats" name="meats" Value="Canadian Bacon" > Canadian Bacon<br>
+                    <input type="checkbox" class="meats" name="meats" Value="Ground Beef" >Ground Beef<br>
+                    <input type="checkbox" class="meats" name="meats" Value="Anchovy" > Anchovy<br>
+                    <input type="checkbox" class="meats" name="meats" Value="Chicken" >Chicken<br>
+                </div>
+<!---->
+
+<!---->
+
+<!---->
+
+<!---->
+
+<!---->
+
+<!---->
+
+<!---->
+
+                <div id="cart">
+                    <div id="showtext">  </div>
+                    <div id="totalPrice"></div>
+                  
+                </div>
+            </form>
 
 
 
-            <input type="radio" name="Size" value="Small" checked> smallish<br>
+           
         </div>
-
+<script src="final_drill_basic.js"></script>
 
 
 
 
 
     </body>
+    </html>
