@@ -6,38 +6,38 @@ function getReceipt(){
     // This initializes our string so it can get passed from  
 	// function to function, growing line by line into a full receipt
     
-var sizeArray = document.getElementsByClassName("size");
-    var sizeTotal = 0;
-    var text1 = "<h3>You Ordered:</h3>";
-    var runningTotal = 0;
-// text for you ordered
-for (var i = 0; i < sizeArray.length; i++) {
-    if (sizeArray[i].checked) {
-        var selectedSize = sizeArray[i].value;
-        text1 = text1+selectedSize+"<br>";
+    var sizeArray = document.getElementsByClassName("size");
+        var sizeTotal = 0;
+        var text1 = "<h3>You Ordered:</h3>";
+        var runningTotal = 0;
+    // text for you ordered
+    for (var i = 0; i < sizeArray.length; i++) {
+        if (sizeArray[i].checked) {
+            var selectedSize = sizeArray[i].value;
+            text1 = text1+selectedSize+"<br>";
+        }
     }
-}
 
 
-// Price Calculation for size
- if (selectedSize === "Personal Pizza") {
-    sizeTotal = 6;
- } else if (selectedSize === "Medium Pizza") {
-        sizeTotal = 10;
- } else if (selectedSize === "Large Pizza") {
-            sizeTotal = 14;
- } else if (selectedSize === "Extra Large Pizza") {
-                sizeTotal = 16;
- }
+    // Price Calculation for size
+     if (selectedSize === "Personal Pizza") {
+        sizeTotal = 6;
+     } else if (selectedSize === "Medium Pizza") {
+            sizeTotal = 10;
+     } else if (selectedSize === "Large Pizza") {
+                sizeTotal = 14;
+     } else if (selectedSize === "Extra Large Pizza") {
+                    sizeTotal = 16;
+     }
 
  
 
- runningTotal = sizeTotal;
- console.log(selectedSize+" = $"+sizeTotal+".00");
- console.log("size text1: "+text1);
- console.log("subtotal: $"+runningTotal+".00");
- getMeat(runningTotal,text1); // All three of these variables will be passed on to each function
-};
+     runningTotal = sizeTotal;
+     console.log(selectedSize+" = $"+sizeTotal+".00");
+     console.log("size text1: "+text1);
+     console.log("subtotal: $"+runningTotal+".00");
+     getMeat(runningTotal,text1); // All three of these variables will be passed on to each function
+}
 
 //meat calculator
 function getMeat(runningTotal,text1) {
@@ -47,27 +47,26 @@ function getMeat(runningTotal,text1) {
 
  
 
-for (var j = 0; j < meatArray.length; j++) {
-    if (meatArray[j].checked) {
-        selectedMeat.push(meatArray[j].value);
-        console.log("selected meat item: ("+meatArray[j].value+")");
-        text1 = text1+meatArray[j].value+"<br>";
+    for (var j = 0; j < meatArray.length; j++) {
+        if (meatArray[j].checked) {
+            selectedMeat.push(meatArray[j].value);
+            console.log("selected meat item: ("+meatArray[j].value+")");
+            text1 = text1+meatArray[j].value+"<br>";
+        }
     }
-}
- var meatCount = selectedMeat.length;
- if (meatCount > 1) {
-        meatTotal = (meatCount - 1);
- } else {
-     meatTotal = 0;
- }
- runningTotal = (runningTotal + meatTotal);
- console.log("total selected meat items: "+meatCount);
- console.log(meatCount+" meat - 1 free meat = "+"$"+meatTotal+".00");
- console.log("meat text1: "+text1);
- console.log("Purchase Total: "+"$"+runningTotal+".00");
- document.getElementById("showText").innerHTML = text1;
- document.getElementById("totalPrice").innerHTML = "</h3>Total: <strong>$"+runningTotal+".00"+"</strong></h3>";
- getTopp(runningTotal,text1)
+     var meatCount = selectedMeat.length;
+     if (meatCount > 1) {
+            meatTotal = (meatCount - 1);
+     } else {
+         meatTotal = 0;
+     }
+     runningTotal = (runningTotal + meatTotal);
+     console.log("total selected meat items: "+meatCount);
+     console.log(meatCount+" meat - 1 free meat = "+"$"+meatTotal+".00");
+     console.log("meat text1: "+text1);
+     console.log("Purchase Total: "+"$"+runningTotal+".00");
+    
+     getTopp(runningTotal,text1)
 };
 
 // other topping calculator
@@ -109,8 +108,7 @@ function getCheese(runningTotal,text1) {
    
  for (var c = 0; c < cheeseArray.length; c++) {
 	if (cheeseArray[c].checked) {
-		 selectedCheese = cheeseArray[c].value;
-		
+	selectedCheese = cheeseArray[c].value;	
 	}
      if (selectedCheese === "Extra Cheese") {
         cheeseTotal= 3;
@@ -122,18 +120,18 @@ function getCheese(runningTotal,text1) {
  console.log(selectedCheese+" $"+cheeseTotal+".00");
  console.log("cheese text1: "+text1);
  console.log("subtotal: $"+runningTotal+".00");
- getSauce(runningTotal,text1)
+    getSauce(runningTotal, text1);
 };
 
 //Sauce
 function getSauce(runningTotal,text1) {
     
- var sauceArray = document.getElementsByClassName("Sauce");
+ var sauceArray = document.getElementsByClassName("sauce");
  
  for (var s = 0; s < sauceArray.length; s++) {
 	if (sauceArray[s].checked) {
-		 selectedSauce = sauceArray[s].value;
-		text1 = text1+selectedSauce+"<br>"
+	selectedSauce = sauceArray[s].value;
+	text1 = text1+selectedSauce+"<br>"
     }
     
     
@@ -146,9 +144,9 @@ function getSauce(runningTotal,text1) {
     function getCrust(runningTotal,text1) {
         var crustTotal= 0;
         var selectedCrust;
-        var crustArray = document.getElementsByClassName("Crust");
+        var crustArray = document.getElementsByClassName("crust");
         for (var cr = 0; cr < crustArray.length; cr++) {
-            if (sizeArray[cr].checked) {
+            if (crustArray[cr].checked) {
                  selectedCrust = crustArray[cr].value;
                 text1 = text1 + selectedCrust+"<br>";
             
@@ -161,7 +159,8 @@ function getSauce(runningTotal,text1) {
         console.log(selectedCrust+" = $"+runningTotal+".00");
         console.log("crust text1: "+text1);
         console.log("subtotal: $"+runningTotal+".00");
-        
+        document.getElementById("showText").innerHTML = text1;
+        document.getElementById("totalPrice").innerHTML = "</h3>Total: <strong>$"+runningTotal+".00"+"</strong></h3>";
     };
             
 
