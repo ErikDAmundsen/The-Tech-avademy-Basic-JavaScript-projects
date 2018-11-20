@@ -1,5 +1,36 @@
-/* #menuBG{width:400px;height:470px;margin:10px auto;}#frmMenu{width:400px;height:200px;}
-		#totalPrice{width:200px;height:190px;margin:0 auto;float:right;}.left{width:200px;height:200px;float:left;}
-		.right{width:200px;height:200px;float:right;}#showText{width:200px;height:190px;margin:0px auto;float:left;}
-		#cart{top:0;margin:0px auto;width:400px;height:200px;}#btnOrder{margin:10px 0px 0px 100px;width:100px;height:40px}
-        */
+body {background-color: rgb(204, 206, 245)}
+#menuBG{width:500px;height:470px;margin:10px auto;}
+
+#frmMenu
+{margin:0% auto;
+width:550px;
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+justify-content: flex-start;
+align-items: stretch;
+padding-top:50px;
+
+}
+
+#totalPrice{width:200px;height:190px;padding-top:20px auto;float:right;}
+
+
+
+.menu{flex: 1 150px;
+min-width: 0;
+border: 2px solid black;
+box-shadow: 0 0 0 3px rgba(255,255,255, .7);
+padding: 0 0 10px 0;
+background-color:rgb(204, 202, 202);
+
+}#showText{width:200px;height:190px;margin:0px auto;float:left;}
+
+#cart{top:0;margin:0px auto;width:400px;height:200px;}
+
+#btnOrder{margin:10px 0px 0px 100px;width:100px;height:40px}
+h1 { text-align: center; margin: 0px auto; display: block }
+#btnOrder {margin-left:40%; margin-top:20px;
+
+
+}
